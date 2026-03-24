@@ -55,16 +55,18 @@
   <script>
   const params = new URLSearchParams(window.location.search);
   const code = params.get('code');
-  const type = params.get('type'); // recovery or signup
+  const error = params.get('error');
+  const errorDescription = params.get('error_description');
 
-  // URLに応じて表示内容を切り替え
-  if (type === 'recovery' || window.location.search.includes('recovery')) {
-    document.querySelector('h2').textContent = 'パスワードリセット';
-    document.querySelector('p').textContent = 'アプリに戻って新しいパスワードを設定してください。';
+  if (error) {
+    document.querySelector('h2').textContent = 'リンクが無効です';
+    document.querySelector('p').textContent = 
+      errorDescription || 'リンクの有効期限が切れているか、すでに使用済みです。アプリから再度リクエストしてください。';
+    document.getElementById('openAppBtn').style.display = 'none';
+  } else {
+    const deepLink = code ? `kaolog://callback?code=${code}` : `kaolog://callback`;
+    document.getElementById('openAppBtn').href = deepLink;
   }
-
-  const deepLink = code ? `kaolog://callback?code=${code}` : `kaolog://callback`;
-  document.getElementById('openAppBtn').href = deepLink;
-</script>
+  </script>
 </body>
 </html>
