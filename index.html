@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>かおログ - メール確認完了</title>
+  <style>
+    body {
+      background: #1a1a1a;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      text-align: center;
+      padding: 40px 32px;
+      max-width: 360px;
+    }
+    .icon { font-size: 64px; margin-bottom: 24px; }
+    h1 { color: #c084fc; font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 20px; margin-bottom: 16px; }
+    p { color: #aaa; line-height: 1.7; margin-bottom: 32px; }
+    .btn {
+      display: inline-block;
+      background: #c084fc;
+      color: #000;
+      font-weight: bold;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .btn:hover { background: #a855f7; }
+    .note {
+      color: #666;
+      font-size: 13px;
+      margin-top: 24px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">✅</div>
+    <h1>かおログ</h1>
+    <h2>メール確認完了</h2>
+    <p>メールアドレスの確認が完了しました。<br>下のボタンからアプリに戻ってログインしてください。</p>
+    <a href="kaolog://callback" class="btn">アプリを開く</a>
+    <p class="note">ボタンが反応しない場合は、アプリがインストールされた端末で開いてください。</p>
+  </div>
+</body>
+</html>
